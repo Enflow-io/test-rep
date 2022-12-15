@@ -1,6 +1,69 @@
 @import "mixins";
 
 
-.Container{
+.Container {
     @include container;
+}
+
+.Footer {
+    height: 250px;
+    background: #2A2F4D;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    padding-top: 60px;
+    padding-bottom: 45px;
+    box-sizing: border-box;
+    font-weight: 500;
+
+}
+
+.Row {
+    display: flex;
+
+
+}
+
+
+.Socials {
+    @include flexList;
+    gap: 9px;
+}
+
+.SiteMap,
+.Contacts {
+    @include list;
+
+    li {
+        margin-bottom: 2px;
+    }
+}
+
+.UnderLogoText {
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: 600;
+
+}
+
+.Col {
+    flex-grow: 1;
+
+    >label {
+        font-weight: 500;
+        margin-bottom: 15px;
+        display: block;
+    }
+}
+
+
+.BottomRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 46px;
+    font-size: 11px;
+    line-height: 13px;
 }

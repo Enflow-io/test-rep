@@ -1,0 +1,41 @@
+@import "mixins";
+.MainScreen {
+    // overflow-x: hidden;
+    // overflow-y: visible;
+    position: relative;
+}
+
+
+.Blackout {
+    position: absolute;
+    background: rgba(6, 28, 46, 0.7);
+    width: 100%;
+    height: 500px;
+    z-index: 3;
+    top: 0;
+}
+
+.ImgContainer {
+    background: url(/img/bg.png) 100% 100% no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    position: absolute;
+}
+
+.ImgBackground {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(/img/bg.png) 100% 100% no-repeat;
+    background-size: contain;
+    height: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.Content{
+    @include container;
+    z-index: 10;
+    position: relative;
+}

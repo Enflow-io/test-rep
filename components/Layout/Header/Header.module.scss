@@ -7,7 +7,7 @@ $headerHeight: 50px;
     @include container;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid black;
+    // border-bottom: 1px solid black;
     justify-content: space-between;
     height: $headerHeight;
 }
@@ -19,6 +19,9 @@ $headerHeight: 50px;
 }
 
 .Logo {
+    &:hover{
+        text-decoration: none;
+    }
     >div {
         width: 100px;
         height: 36px;

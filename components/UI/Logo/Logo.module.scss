@@ -1,0 +1,20 @@
+.Logo {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    >div {
+        width: 100px;
+        height: 36px;
+        background: #EFF3F8;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+    }
+}

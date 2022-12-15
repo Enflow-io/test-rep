@@ -6,6 +6,7 @@ import JobIcon from "../../Svg/JobIcon"
 import MarketsIcon from "../../Svg/MarketsIcon"
 import PropertyIcon from "../../Svg/PropertyIcon"
 import { PrimaryButton } from "../../UI/Buttons/PrimaryButton/PrimaryButton"
+import Logo from "../../UI/Logo/Logo"
 import classes from "./Header.module.scss"
 import MenuButton from "./MenuButton"
 
@@ -17,9 +18,7 @@ const Header = (props: HeaderProps) => {
     return <div className={classes.Header}>
         <div className={classes.Container}>
             <div className={classes.LeftPart}>
-                <a className={classes.Logo} href='/'>
-                    <div>Logo</div>
-                </a>
+                <Logo width={100} height={36} />
                 <ul className={classes.Menu}>
                     <li>
                         <MenuButton
