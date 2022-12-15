@@ -1,0 +1,101 @@
+@import "mixins";
+
+
+$headerHeight: 50px;
+
+.Container {
+    @include container;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    justify-content: space-between;
+    height: $headerHeight;
+}
+
+
+.Header {
+    height: $headerHeight;
+    background: #FFFFFF;
+}
+
+.Logo {
+    >div {
+        width: 100px;
+        height: 36px;
+        background: #EFF3F8;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.Menu,
+.UserMenu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.Menu {
+    li {
+        margin-right: 28px;
+        ;
+    }
+}
+
+.LeftPart, .RightPart {
+    display: flex;
+    align-items: center;
+}
+
+.UserMenu{
+    align-items: center;
+
+    > ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        li{
+            margin-right: 20px;;
+        }
+    }
+}
+
+
+.MenuButton {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    color: #1D1D1B;
+
+    display: flex;
+    align-items: center;
+
+    >span {
+        padding-left: 9px;
+    }
+
+    >svg{
+        position: relative;
+        top: -1px;
+    }
+
+    &:hover{
+        >span{
+            text-decoration: underline;
+        }
+
+    }
+}
+
+.Divider{
+    width: .5px;
+    height: 30px;
+    border-left: 0.5px solid #B5BCCB;
+    margin: 0 20px;
+}

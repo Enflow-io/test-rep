@@ -1,0 +1,20 @@
+.PrimaryButton {
+    cursor: pointer;
+    background: #3B85F7;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: .03em;
+
+    border-radius: 6px;
+    display: flex;
+
+    > svg {
+        margin-right: 6px;
+    }
+}
