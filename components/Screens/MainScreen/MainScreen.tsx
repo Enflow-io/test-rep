@@ -1,3 +1,6 @@
+import BrandsList from "../../Features/MainPage/BrandsList/BrandsList";
+import MainFilter from "../../Features/MainPage/MainFilter/MainFilter";
+import MainPageTitle from "../../Features/MainPage/MainPageTitle/MainPageTitle";
 import classes from "./MainScreen.module.scss";
 
 const MainScreen = () => {
@@ -8,10 +11,9 @@ const MainScreen = () => {
         </div>
 
         <div className={classes.Content} >
-            <div>
-                Aгрегатор по поиску автомобилей
-                со всей России
-            </div>
+            <MainPageTitle />
+            <MainFilter />
+            <BrandsList />
         </div>
 
     </div>

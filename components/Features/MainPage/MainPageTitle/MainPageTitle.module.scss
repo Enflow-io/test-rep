@@ -1,0 +1,29 @@
+@import "mixins";
+
+.MainPageTitle {
+    padding-top: 150px;;
+    h1 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 117.5%;
+        color: white;
+        margin: 0;
+    }
+
+    label {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 49px;
+        color: #FFFFFF;
+
+    }
+
+    ul{
+        
+        @include flexList;
+        gap: 40px;
+        margin-top: 35px;
+        margin-bottom: 76px;
+    }
+}

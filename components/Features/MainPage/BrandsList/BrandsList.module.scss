@@ -1,0 +1,53 @@
+@import "mixins";
+
+.BrandsList {
+    margin-top: 50px;
+    ;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    ul {
+
+
+        @include flexList;
+        // gap: 190px;
+        row-gap: 30px;
+        flex-wrap: wrap;
+        // max-width: 90%;
+        position: relative;
+        left: 7%;
+        margin-bottom: 50px;
+
+        li {
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            width: 25%;
+            display: flex;
+            align-items: center;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+
+            span {
+                margin-left: 13px;
+                ;
+            }
+        }
+    }
+}
+
+.BrandLink {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #3B85F7;
+}

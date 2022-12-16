@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gc": "node .generate_component $1"
   },
   "dependencies": {
     "@next/font": "^13.0.7",
