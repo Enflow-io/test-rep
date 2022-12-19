@@ -8,7 +8,7 @@ export default React.memo(({ width, height, color, ...other }: SvgInterface) => 
         <rect x="19" y="9" width="8" height="8" rx="2" fill="#DDE0E5" />
         <rect x="9" y="19" width="8" height="8" rx="2" fill="#DDE0E5" />
         <rect x="19" y="19" width="8" height="8" rx="2" fill="#DDE0E5" />
-        <rect x="0.5" y="0.5" width="35" height="35" rx="7.5" stroke="#DDE0E5" stroke-opacity="0.33" />
+        <rect x="0.5" y="0.5" width="35" height="35" rx="7.5" stroke="#DDE0E5" strokeOpacity="0.33" />
     </svg>
 
 

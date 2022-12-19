@@ -11,7 +11,7 @@ export interface SelectInputProps {
   value?: Option
   options: Option[]
   className?: string
-  
+  instanceId: string
 }
 
 const SelectInput = ({ options, placeholder, className, ...props }: SelectInputProps) => {
@@ -29,6 +29,7 @@ const SelectInput = ({ options, placeholder, className, ...props }: SelectInputP
 
   return <div  className={`${classes.SelectInput} ${className}`}>
     <Select
+      instanceId={props.instanceId}
       // defaultValue={{
       // value: "Популярные"
       // }}

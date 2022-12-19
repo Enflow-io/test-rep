@@ -1,3 +1,169 @@
-.CatalogCard{
+.CatalogCard {
+    padding: 22px 20px 0 20px;
+
+    &:hover {
+        background: #FFFFFF;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+        border-radius: 16px;
+
+        .Divider {
+            border-color: transparent;
+        }
+    }
+
+}
+
+.CatalogCardContainer {
     display: flex;
+
+    >div {
+        flex-grow: 1;
+    }
+
+
+}
+
+.Divider {
+    padding-top: 20px;
+    ;
+    border-bottom: 0.5px solid #B5BCCB;
+
+    width: 100%;
+    box-sizing: border-box;;
+    height: 1px;
+}
+
+.ImgContainer {
+    margin-right: 30px;
+}
+
+.Info {
+    padding-top: 10px;
+    ;
+    margin-right: 85px;
+
+    >a {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: #1D1D1B;
+        display: block;
+        margin-bottom: 5px;
+        ;
+
+    }
+}
+
+.Tags {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1D1D1B;
+
+    display: flex;
+    gap: 20px;
+    margin-bottom: 18px;
+    ;
+}
+
+.Props {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #747F94;
+    margin-bottom: 18px;
+    ;
+}
+
+
+.MoreProps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.MorePropLabels,
+.MorePropVals {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.MorePropLabels>label,
+.MorePropVals>div {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #747F94;
+    margin-bottom: 5px;
+    ;
+}
+
+
+.Location {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #747F94;
+    display: flex;
+    align-items: center;
+
+    >svg {
+        margin-right: 8px;
+    }
+}
+
+
+.Source {
+    padding-top: 10px;
+    ;
+    margin-right: 90px;
+    ;
+
+    >svg {
+        margin-bottom: 2px;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+
+    color: #747F94;
+}
+
+
+.Price {
+    padding-top: 10px;
+    ;
+    margin-right: 90px;
+
+    >span {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+
+        color: #1D1D1B;
+    }
+}
+
+.Buttons {
+    padding-top: 10px;
+    ;
+}
+
+
+.HideDivider{
+    border-color: transparent;
 }

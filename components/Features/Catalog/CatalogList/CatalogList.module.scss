@@ -1,8 +1,31 @@
 @import "mixins";
 
+
+.Vertical {
+    display: inline-grid;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    >li {
+        width: 100%;
+        min-width: 0;
+        //
+    }
+}
+
+.Horizontal {
+    display: flex;
+    flex-direction: column;
+
+}
+
 .CatalogList {
     margin-top: 50px;
-    ;
+    margin-bottom: 30px;
+
+    align-items: center;
 
     h3 {
         font-style: normal;
@@ -16,32 +39,62 @@
 }
 
 .Header {
+    width: 100%;
+    ;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;;
+    margin-bottom: 40px;
+    ;
 }
 
-.HeaderMenu{
+.HeaderMenu {
     display: flex;
     align-items: center;
 }
 
 .CardList {
     @include list;
+    margin-bottom: 30px;
+    ;
 }
 
-.Divider{
+.Divider {
     width: .5px;
     height: 30px;
     border-left: 0.5px solid #B5BCCB;
     margin: 0 20px;
 }
 
-.HorizontalBtn{
-    margin-right: 10px;;
+.HorizontalBtn {
+    margin-right: 10px;
+    ;
 }
 
-.Select{
-    margin-right: 16px;;
+.Select {
+    margin-right: 16px;
+    ;
+}
+
+
+.PrimaryButton {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 10px;
+    width: 220px;
+    height: 56px;
+    border: 1px solid #3B85F7;
+    border-radius: 10px;
+    background-color: white;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #3B85F7;
+
+
 }

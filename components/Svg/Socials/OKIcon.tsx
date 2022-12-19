@@ -1,5 +1,5 @@
 import React from 'react'
-import SvgInterface from '../../interfaces/SvgInterface';
+import SvgInterface from '../../../interfaces/SvgInterface'
 
 export default React.memo(({ width, height, color, ...other }: SvgInterface) => {
     return <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">

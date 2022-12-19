@@ -3,6 +3,7 @@ import BrandsList from "../../Features/MainPage/BrandsList/BrandsList";
 import MainFilter from "../../Features/MainPage/MainFilter/MainFilter";
 import MainPageTitle from "../../Features/MainPage/MainPageTitle/MainPageTitle";
 import classes from "./MainScreen.module.scss";
+import React from 'react'
 
 const MainScreen = () => {
     return <div className={classes.MainScreen}>

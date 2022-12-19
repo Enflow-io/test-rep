@@ -11,7 +11,7 @@ const ITEMS_QNT_SHORT_MODE = 12;
 const BrandsList = ({ }: BrandsListProps) => {
   const [isShortMode, setIsShortMode] = useState(true)
 
-  const toggleMode = (e: Event) => {
+  const toggleMode = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsShortMode(!isShortMode);
   }
