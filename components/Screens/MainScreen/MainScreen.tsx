@@ -1,3 +1,4 @@
+import CatalogList from "../../Features/Catalog/CatalogList/CatalogList";
 import BrandsList from "../../Features/MainPage/BrandsList/BrandsList";
 import MainFilter from "../../Features/MainPage/MainFilter/MainFilter";
 import MainPageTitle from "../../Features/MainPage/MainPageTitle/MainPageTitle";
@@ -14,6 +15,7 @@ const MainScreen = () => {
             <MainPageTitle />
             <MainFilter />
             <BrandsList />
+            <CatalogList />
         </div>
 
     </div>

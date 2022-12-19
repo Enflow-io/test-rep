@@ -37,13 +37,13 @@ const Home: NextPage = () => {
         maxWidth: 500
       }}>
        
-        <Pagination
+        {/* <Pagination
           // narrowStrategy={['dropNav', 'dropEllipsis']}
           narrowStrategy={'dropNav'}
           total={totalPages}
           current={currentPage}
           onPageChange={page => handlePageChange(page)}
-        />
+        /> */}
       </div>
     </Template>
   );
