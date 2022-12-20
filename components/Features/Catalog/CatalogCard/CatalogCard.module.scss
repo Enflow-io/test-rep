@@ -37,23 +37,28 @@
     margin-right: 30px;
 }
 
+.Name {
+    font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: #1D1D1B;
+}
 .Info {
     padding-top: 10px;
     ;
     margin-right: 85px;
 
     >a {
-        font-style: normal;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 22px;
-        color: #1D1D1B;
+        @extend .Name;
         display: block;
         margin-bottom: 5px;
         ;
 
     }
 }
+
+
 
 .Tags {
     font-style: normal;

@@ -12,7 +12,7 @@ const VerticalCatalogCard = ({ }: VerticalCatalogCardProps) => {
       <img src={''} />
     </div>
 
-    <a href='#'>Toyota Camry VII (XV50)</a>
+    <a className={classes.Name} href='#'>Toyota Camry VII (XV50)</a>
 
     <div className={classes.Tags}>
       <div>2020 г</div>

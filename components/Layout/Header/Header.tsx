@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import AutoIcon from "../../Svg/AutoIcon"
 import EnterIcon from "../../Svg/EnterIcon"
 import EyeBtnIcon from "../../Svg/EyeBtnIcon"
@@ -15,6 +16,13 @@ interface HeaderProps {
 }
 
 const Header = (props: HeaderProps) => {
+    const [hasNotifications, setHasNotifications] = useState(false);
+    useEffect(()=>{
+        setTimeout(()=>{
+            setHasNotifications(true)
+        }, 800);
+        
+    }, []);
     return <div className={classes.Header}>
         <div className={classes.Container}>
             <div className={classes.LeftPart}>
@@ -24,6 +32,7 @@ const Header = (props: HeaderProps) => {
                         <MenuButton
                             title="Работа"
                             icon={<JobIcon />}
+                            link={'/job'}
 
                         />
                     </li>
@@ -31,18 +40,21 @@ const Header = (props: HeaderProps) => {
                         <MenuButton
                             title="Авто"
                             icon={<AutoIcon />}
+                            link={'/auto'}
                         />
                     </li>
                     <li>
                         <MenuButton
                             title="Недвижимость"
                             icon={<PropertyIcon />}
+                            link={'/property'}
                         />
                     </li>
                     <li>
                         <MenuButton
                             title="Маркетплейсы"
                             icon={<MarketsIcon />}
+                            link={'/marketplaces'}
                         />
                     </li>
                 </ul>
@@ -61,7 +73,7 @@ const Header = (props: HeaderProps) => {
                     <ul>
                         <li>
                             <MenuButton
-                                icon={<FavoriteBtnIcon hasNotifications={true} />}
+                                icon={<FavoriteBtnIcon hasNotifications={hasNotifications} />}
                             />
                         </li>
                         <li>

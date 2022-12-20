@@ -32,7 +32,7 @@ const CatalogList = ({ }: CatalogListProps) => {
           ]} />
 
         <SelectInput
-        instanceId={'sort2-react-select'}
+          instanceId={'sort2-react-select'}
           value={{ value: 'За все время', label: 'За все время' }}
           options={[
             { value: 'За все время', label: 'За все время' },
@@ -41,10 +41,16 @@ const CatalogList = ({ }: CatalogListProps) => {
 
         <div className={classes.Divider}></div>
 
-        <a className={classes.HorizontalBtn} href='#'>
+        <a className={classes.HorizontalBtn} href='#' onClick={(e) => {
+          e.preventDefault();
+          setIsVertical(false)
+        }}>
           <HorizontalBtnIcon />
         </a>
-        <a href='#'>
+        <a href='#' onClick={(e) => {
+          e.preventDefault();
+          setIsVertical(true)
+        }}>
           <VerticalBtnIcon />
         </a>
       </div>
