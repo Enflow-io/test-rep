@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   return (
     <Template>
       <MainScreen />
-      <div>{authState ? "Logged in" : "Not Logged In"}</div>
+      {/* <div>{authState ? "Logged in" : "Not Logged In"}</div>
       <button
         onClick={() => {
           authState
@@ -31,11 +31,11 @@ const Home: NextPage = () => {
         }}
       >
         {authState ? "Logout" : "LogIn"}
-      </button>
+      </button> */}
 
-      <div style={{
+      {/* <div style={{
         maxWidth: 500
-      }}>
+      }}> */}
        
         {/* <Pagination
           // narrowStrategy={['dropNav', 'dropEllipsis']}
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
           current={currentPage}
           onPageChange={page => handlePageChange(page)}
         /> */}
-      </div>
+      {/* </div> */}
     </Template>
   );
 };

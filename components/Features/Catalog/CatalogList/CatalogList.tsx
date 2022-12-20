@@ -63,7 +63,7 @@ const CatalogList = ({ }: CatalogListProps) => {
         const showDivider = !isLastItem && !isNeighborBelow;
         if (isVertical) {
           return <li key={index}>
-            <VerticalCatalogCard />
+            <VerticalCatalogCard title={ index % 2 === 0 ? 'Toyota Camry VII (XV50)' : 'Toyota Camry VII (XV50) Very Long Title May be two or three lines'} />
           </li>
         } else {
           return <li key={index}>
