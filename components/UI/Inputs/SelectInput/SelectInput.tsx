@@ -7,11 +7,16 @@ interface Option {
   label: string
 }
 export interface SelectInputProps {
-  placeholder?: ""
+  placeholder?: string
+  width?: string | number
+  height?: string | number
   value?: Option
   options: Option[]
   className?: string
   instanceId: string
+  fontStyles?: React.CSSProperties
+  borderColor?: string
+  borderRadius?: string | number
 }
 
 const SelectInput = ({ options, placeholder, className, ...props }: SelectInputProps) => {
@@ -22,40 +27,32 @@ const SelectInput = ({ options, placeholder, className, ...props }: SelectInputP
     fontStyle: "normal",
     fontWeight: 600,
     fontSize: 13,
-    // lineHeight: 16,
-    color: "#7B869B"
+    color: "#7B869B",
+    ...props.fontStyles
   }
 
+  const borderColor = props.borderColor || "rgba(181, 188, 203, 0.33)";
+  const borderRadius = props?.borderRadius || 8;
 
-  return <div  className={`${classes.SelectInput} ${className}`}>
+  return <div className={`${classes.SelectInput} ${className}`}>
     <Select
       instanceId={props.instanceId}
-      // defaultValue={{
-      // value: "Популярные"
-      // }}
-      // defaultValue={{
-      // value: "Популярные"
-      // }}
       options={options}
       placeholder={placeholder}
-      // value={{
-      //   value: "Популярные"
-      // }}
       value={props.value}
       styles={{
         control: (baseStyles, state) => {
-          // debugger
           return {
             ...baseStyles,
-            borderRadius: 8,
+            borderRadius: borderRadius,
             cursor: 'pointer',
-            minHeight: 36,
-            height: 36,
+            minHeight: props?.height || 36,
+            height: props?.height || 36,
             backgroundColor: "transparent",
-            borderColor: "rgba(181, 188, 203, 0.33)",
+            borderColor: borderColor,
             "&:hover": {
-              border: "1px solid rgba(181, 188, 203, 0.33)",
-              borderColor: "rgba(181, 188, 203, 0.33)",
+              border: `1px solid ${borderColor}`,
+              borderColor: borderColor,
               boxShadow: "unset"
             }
           }
@@ -70,9 +67,9 @@ const SelectInput = ({ options, placeholder, className, ...props }: SelectInputP
         container: (baseStyles, state) => {
           return {
             ...baseStyles,
-            width: 200,
-            height: 36,
-            minHeight: 36
+            width: props?.width || 200,
+            height: props?.height || 36,
+            minHeight: props?.height || 36
           }
         },
         singleValue: (baseStyles, state) => {

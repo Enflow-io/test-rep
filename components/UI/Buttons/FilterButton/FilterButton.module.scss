@@ -1,0 +1,51 @@
+.FilterButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 346px;
+    width: 100%;
+    height: 56px;
+    border-radius: 10px;
+    cursor: pointer;
+    >svg {
+        margin-right: 10px;
+    }
+
+
+    &:hover{
+        
+        text-decoration: none;
+    }
+}
+
+.Primary {
+    background: #3B85F7;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.Cancel {
+    border: 1px solid #F7D3D2;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #343B47;
+    max-width: 170px;
+}
+
+.PrimaryLight {
+    border: 1px solid #3B85F7;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #3B85F7;
+}

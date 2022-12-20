@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import HorizontalBtnIcon from '../../../Svg/HorizontalBtnIcon';
 import VerticalBtnIcon from '../../../Svg/VerticalBtnIcon';
-import SelectInput from '../../../UI/SelectInput/SelectInput';
+import SelectInput from '../../../UI/Inputs/SelectInput/SelectInput';
 import CatalogCard from '../CatalogCard/CatalogCard';
 import VerticalCatalogCard from '../VerticalCatalogCard/VerticalCatalogCard';
 import classes from './CatalogList.module.scss';

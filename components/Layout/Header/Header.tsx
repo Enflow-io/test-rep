@@ -83,7 +83,7 @@ const Header = (props: HeaderProps) => {
                         </li>
                     </ul>
 
-                    <PrimaryButton />
+                    <PrimaryButton title="Создать объявление" />
 
                 </div>
 

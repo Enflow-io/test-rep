@@ -15,7 +15,6 @@ interface TemplateProps {
 
 const Template: React.FC<React.PropsWithChildren<TemplateProps>> = ({ children }) => {
     const [minContentHeight, setMinContentHeight] = useState(0);
-    const [minContentHeight2, setMinContentHeight2] = useState(0);
 
     const calculateHeights = () => {
         const headerEl: HTMLElement | null = document.querySelector(`.${headerClasses.Header}`);
@@ -44,7 +43,7 @@ const Template: React.FC<React.PropsWithChildren<TemplateProps>> = ({ children }
     return <main className={`${classes.Template}`}>
         <Header />
         <div className={classes.Container} style={{
-            minHeight: minContentHeight
+            minHeight: minContentHeight || 1000
         }}>
             {children}
         </div>
