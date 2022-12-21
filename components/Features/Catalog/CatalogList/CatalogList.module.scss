@@ -7,6 +7,12 @@
     justify-content: center;
     align-items: center;
     grid-template-columns: repeat(4, 1fr);
+    @media screen and (max-width: 930px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (max-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
     gap: 16px;
     >li {
         width: 100%;
@@ -40,7 +46,7 @@
 
 .Header {
     width: 100%;
-    ;
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;

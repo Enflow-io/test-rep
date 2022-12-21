@@ -19,9 +19,10 @@ $headerHeight: 50px;
 }
 
 .Logo {
-    &:hover{
+    &:hover {
         text-decoration: none;
     }
+
     >div {
         width: 100px;
         height: 36px;
@@ -48,26 +49,29 @@ $headerHeight: 50px;
     }
 }
 
-.LeftPart, .RightPart {
+.LeftPart,
+.RightPart {
     display: flex;
     align-items: center;
 }
 
-.LeftPart{
-    overflow: hidden;
+.LeftPart {
+    // overflow: hidden;
 }
 
-.UserMenu{
+.UserMenu {
     align-items: center;
 
-    > ul{
+    >ul {
         padding: 0;
         margin: 0;
         list-style: none;
         display: flex;
         align-items: center;
-        li{
-            margin-right: 20px;;
+
+        li {
+            margin-right: 20px;
+            ;
         }
     }
 }
@@ -87,20 +91,20 @@ $headerHeight: 50px;
         padding-left: 9px;
     }
 
-    >svg{
+    >svg {
         position: relative;
         top: -1px;
     }
 
-    &:hover{
-        >span{
+    &:hover {
+        >span {
             text-decoration: underline;
         }
 
     }
 }
 
-.Divider{
+.Divider {
     width: .5px;
     height: 30px;
     border-left: 0.5px solid #B5BCCB;
@@ -108,6 +112,21 @@ $headerHeight: 50px;
 }
 
 
-.Active{
+.Active {
     font-weight: bold;
+}
+
+
+$menuWidth: 1075px;
+.DesktopMenu {
+    @media (max-width: $menuWidth) {
+        display: none;
+    }
+
+}
+
+.MobileMenu {
+    @media (min-width: $menuWidth) {
+        display: none;
+    }
 }

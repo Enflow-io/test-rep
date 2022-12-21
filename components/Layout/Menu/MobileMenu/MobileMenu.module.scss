@@ -1,0 +1,118 @@
+@import "mixins";
+
+.MobileMenu {
+    margin-left: 36px;
+    position: relative;
+    height: 50px;
+    border-bottom: 2px solid #3B85F7;
+    min-width: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    >span {
+        cursor: pointer;
+        height: 100%;;
+        display: flex;
+        align-items: center;
+    }
+
+
+    .ButtonContainer{
+        display: flex;
+        align-items: center;
+        a {
+            padding-right: 4px;
+            padding-left: 8px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 16px;
+            color: #3B85F7;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+
+    
+}
+
+
+.Icon {
+    position: absolute;
+    right: -27px;
+    top: 12px;
+}
+
+.ExpandedMenuCont {
+    position: absolute;
+    top: 60px;
+    left: -7px;
+
+    z-index: 40;
+    background: white;
+    padding: 10px 0;
+
+    background: #FFFFFF;
+    border: 0.5px solid #E2E5EB;
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
+
+
+}
+
+.ExpandedMenu {
+    @include list;
+
+    li {
+        cursor: pointer;
+        width: 100%;
+        ;
+
+        &:hover {
+            background: #F6F8FB;
+        }
+
+        &:hover {
+
+            a {
+                text-decoration: none;
+                ;
+
+                >span {
+                    text-decoration: none;
+                    color: #3B85F7;
+                }
+
+                >svg {
+                    path {
+                        fill: #3B85F7;
+                    }
+
+                }
+            }
+
+        }
+
+        &.Active {
+            background: #F6F8FB;
+
+            a {
+                color: #3B85F7;
+            }
+
+            svg {
+                fill: #3B85F7
+            }
+        }
+
+        height: 40px;
+        width: 200px;
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+}

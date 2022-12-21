@@ -1,9 +1,13 @@
+@import "mixins";
 .RangeInput {
     display: flex;
     width: 100%;
     justify-content: space-between;
     gap: 5px;
     align-items: center;
+    @include placeholder {
+        color: #7B869B;
+    }
 }
 
 .From,

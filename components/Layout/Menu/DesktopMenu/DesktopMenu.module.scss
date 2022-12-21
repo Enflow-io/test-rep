@@ -1,0 +1,10 @@
+@import "mixins";
+.DesktopMenu{
+    @include flexList;
+    align-items: center;
+    margin-left: 20px;;
+    li {
+        margin-right: 28px;
+        
+    }
+}
