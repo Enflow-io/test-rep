@@ -117,16 +117,50 @@ $headerHeight: 50px;
 }
 
 
-$menuWidth: 1075px;
+$menuWidth: 900px;
+
 .DesktopMenu {
     @media (max-width: $menuWidth) {
-        display: none;
+        display: none !important;
     }
 
 }
 
 .MobileMenu {
     @media (min-width: $menuWidth) {
-        display: none;
+        display: none !important;
+    }
+}
+
+.PrimaryButton {
+    $widthToMinimize: 1100px;
+    cursor: pointer;
+    background: #3B85F7;
+    padding: 10px 20px;
+    @media (max-width: $widthToMinimize) {
+        padding: 10px;;
+    }
+    border: none;
+    color: white;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: .03em;
+
+    border-radius: 6px;
+    display: flex;
+
+    >svg {
+        margin-right: 6px;
+        @media (max-width: $widthToMinimize) {
+            margin-right: 0;
+        }
+    }
+    >span{
+        @media (max-width: $widthToMinimize) {
+            display: none;
+        }
     }
 }

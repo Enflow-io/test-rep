@@ -6,6 +6,7 @@ import EyeBtnIcon from "../../Svg/EyeBtnIcon"
 import FavoriteBtnIcon from "../../Svg/FavoriteBtnIcon"
 import JobIcon from "../../Svg/JobIcon"
 import MarketsIcon from "../../Svg/MarketsIcon"
+import PlusIcon from "../../Svg/PlusIcon"
 import PropertyIcon from "../../Svg/PropertyIcon"
 import { PrimaryButton } from "../../UI/Buttons/PrimaryButton/PrimaryButton"
 import Logo from "../../UI/Logo/Logo"
@@ -22,64 +23,32 @@ interface HeaderProps {
 const Header = (props: HeaderProps) => {
     const router = useRouter();
     const [hasNotifications, setHasNotifications] = useState(false);
-    useEffect(()=>{
-        setTimeout(()=>{
+    useEffect(() => {
+        setTimeout(() => {
             setHasNotifications(true);
         }, 800);
-        
+
     }, []);
 
-    let activeItem = Items.find(el=>{
+    let activeItem = Items.find(el => {
         return el.link === router.pathname;
     })
 
-    activeItem = activeItem ? activeItem :  {
+    activeItem = activeItem ? activeItem : {
         title: "Главная",
         icon: JobIcon,
         link: "/"
     };
 
-    
-    
+
+
 
     return <div className={classes.Header}>
         <div className={classes.Container}>
             <div className={classes.LeftPart}>
                 <Logo width={100} height={36} />
                 <DesktopMenu className={classes.DesktopMenu} />
-                <MobileMenu activeItem={activeItem} className={classes.MobileMenu}/>
-                {/* <ul className={classes.Menu}>
-                    <li>
-                        <MenuButton
-                            title="Работа"
-                            icon={<JobIcon />}
-                            link={'/job'}
-
-                        />
-                    </li>
-                    <li>
-                        <MenuButton
-                            title="Авто"
-                            icon={<AutoIcon />}
-                            link={'/auto'}
-                        />
-                    </li>
-                    <li>
-                        <MenuButton
-                            title="Недвижимость"
-                            icon={<PropertyIcon />}
-                            link={'/property'}
-                        />
-                    </li>
-                    <li>
-                        <MenuButton
-                            title="Маркетплейсы"
-                            icon={<MarketsIcon />}
-                            link={'/marketplaces'}
-                        />
-                    </li>
-                </ul> */}
-
+                <MobileMenu activeItem={activeItem} className={classes.MobileMenu} />
             </div>
 
 
@@ -104,7 +73,9 @@ const Header = (props: HeaderProps) => {
                         </li>
                     </ul>
 
-                    <PrimaryButton title="Создать объявление" />
+                    <button className={classes.PrimaryButton}>
+                        <PlusIcon /><span>Создать объявление</span>
+                    </button>
 
                 </div>
 
