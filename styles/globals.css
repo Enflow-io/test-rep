@@ -79,3 +79,16 @@ a:hover {
 }
 
 /* /Pagination */
+
+
+/* Slider */
+.rc-slider-mark-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+
+  color: #26365C;
+}
+
+/* /Slider */

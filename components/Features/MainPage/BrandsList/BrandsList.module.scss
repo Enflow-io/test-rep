@@ -2,25 +2,23 @@
 
 .BrandsList {
     margin-top: 50px;
-    ;
+    
 
     display: flex;
     align-items: center;
     flex-direction: column;
 
     ul {
-
+        padding: 0 30px;
 
         @include flexList;
-        // gap: 190px;
         row-gap: 30px;
         flex-wrap: wrap;
-        // max-width: 90%;
         position: relative;
-        // left: 7%;
         margin-bottom: 50px;
 
         li {
+            padding-left: 20px;;
             a {
                 display: flex;
                 align-items: center;

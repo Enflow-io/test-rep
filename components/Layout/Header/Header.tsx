@@ -1,5 +1,7 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { selectAuthState, setAuthState } from "../../../store/authSlice"
 import AutoIcon from "../../Svg/AutoIcon"
 import EnterIcon from "../../Svg/EnterIcon"
 import EyeBtnIcon from "../../Svg/EyeBtnIcon"
@@ -7,6 +9,7 @@ import FavoriteBtnIcon from "../../Svg/FavoriteBtnIcon"
 import JobIcon from "../../Svg/JobIcon"
 import MarketsIcon from "../../Svg/MarketsIcon"
 import PlusIcon from "../../Svg/PlusIcon"
+import ProfileIcon from "../../Svg/ProfileIcon"
 import PropertyIcon from "../../Svg/PropertyIcon"
 import { PrimaryButton } from "../../UI/Buttons/PrimaryButton/PrimaryButton"
 import Logo from "../../UI/Logo/Logo"
@@ -23,10 +26,22 @@ interface HeaderProps {
 const Header = (props: HeaderProps) => {
     const router = useRouter();
     const [hasNotifications, setHasNotifications] = useState(false);
+
+    const authState = useSelector(selectAuthState);
+    const dispatch = useDispatch();
     useEffect(() => {
         setTimeout(() => {
             setHasNotifications(true);
-        }, 800);
+        }, 1000);
+
+        setTimeout(() => {
+            setHasNotifications(false);
+        }, 1500);
+
+setTimeout(() => {
+            setHasNotifications(true);
+        }, 2000);
+
 
     }, []);
 
@@ -55,10 +70,19 @@ const Header = (props: HeaderProps) => {
             <div className={classes.RightPart}>
 
                 <div className={classes.UserMenu}>
-                    <MenuButton
-                        title="Войти"
-                        icon={<EnterIcon />}
-                    />
+                    {!authState &&
+                        <MenuButton
+                            onClick={()=>dispatch(setAuthState(true))}
+                            title="Войти"
+                            icon={<EnterIcon />}
+                        />
+                    }
+                    {authState &&
+                        <MenuButton
+                            title="+7 (923) 154-89-68"
+                            icon={<ProfileIcon />}
+                        />
+                    }
                     <div className={classes.Divider}></div>
                     <ul>
                         <li>

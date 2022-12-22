@@ -11,6 +11,7 @@ import RangeInput from '../../../UI/Inputs/RangeInput/RangeInput';
 import SelectInput from '../../../UI/Inputs/SelectInput/SelectInput';
 import classes from './MainFilter.module.scss';
 import TextInput from '../../../UI/Inputs/TextInput/TextInput';
+import LocationFilter from '../LocationFilter/LocationFilter';
 
 export interface MainFilterProps {
 
@@ -19,7 +20,8 @@ export interface MainFilterProps {
 const MainFilter = ({ }: MainFilterProps) => {
 
   const [isExpanded, setIsExpanded] = useState(false);
-
+  const [isLocationFilterShown, setIsLocationFilterShown] = useState(false);
+  
 
   const selectInputFonts = {
     fontStyle: "normal",
@@ -29,7 +31,14 @@ const MainFilter = ({ }: MainFilterProps) => {
 
   return <div className={`${classes.MainFilter} ${isExpanded ? classes.ExpandedMode : ''}`}>
     <div className={classes.Header}>
-      <div className={classes.CitySelector}><LocationButton /></div>
+      <div className={classes.CitySelector}><LocationButton onClick={(e)=>{
+        setIsLocationFilterShown(!isLocationFilterShown);
+      }} /></div>
+      {isLocationFilterShown && <div className={classes.LocationFilterCont}>
+        <LocationFilter onClose={()=>{
+          setIsLocationFilterShown(false)
+        }} />
+      </div>}
       <div className={`${classes.ModeSwitcher} ${isExpanded ? classes.Expanded : ''}`} onClick={() => {
         setIsExpanded(!isExpanded);
       }}>Расширенный поиск <ExpanderIcon /></div>
@@ -398,15 +407,15 @@ const MainFilter = ({ }: MainFilterProps) => {
         icon={<LocationIcon />}
       />
       {/* {isExpanded && */}
-        <div className={classes.CancelContainer} style={{
-          visibility: !isExpanded ? 'hidden' : 'visible'
-        }}>
-          <FilterButton
-            title='Сбросить'
-            type="cancel"
-            icon={<CancelIcon />}
-          />
-        </div>
+      <div className={classes.CancelContainer} style={{
+        visibility: !isExpanded ? 'hidden' : 'visible'
+      }}>
+        <FilterButton
+          title='Сбросить'
+          type="cancel"
+          icon={<CancelIcon />}
+        />
+      </div>
       {/* } */}
 
     </div>

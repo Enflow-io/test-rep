@@ -78,6 +78,7 @@ $headerHeight: 50px;
 
 
 .MenuButton {
+    cursor: pointer;
     font-style: normal;
     font-weight: 600;
     font-size: 13px;
@@ -117,7 +118,7 @@ $headerHeight: 50px;
 }
 
 
-$menuWidth: 900px;
+$menuWidth: 972px;
 
 .DesktopMenu {
     @media (max-width: $menuWidth) {
@@ -133,7 +134,7 @@ $menuWidth: 900px;
 }
 
 .PrimaryButton {
-    $widthToMinimize: 1100px;
+    $widthToMinimize: 1150px;
     cursor: pointer;
     background: #3B85F7;
     padding: 10px 20px;

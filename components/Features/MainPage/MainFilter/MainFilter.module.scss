@@ -1,3 +1,5 @@
+@import "zIndexes";
+
 .MainFilter {
     // width: 1140px;
     min-height: 260px;
@@ -14,18 +16,20 @@
     padding-bottom: 20px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .Footer {
     display: flex;
     gap: 20px;
     padding-top: 30px;
-    
+
 }
 
-.ExpandedMode{
-    .Footer{
-        flex-direction: row-reverse;;
+.ExpandedMode {
+    .Footer {
+        flex-direction: row-reverse;
+        ;
         padding-top: 0px;
     }
 }
@@ -35,7 +39,7 @@
 
 }
 
-.CancelContainer{
+.CancelContainer {
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -58,9 +62,11 @@
 .ExpandedFilters {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     @media screen and (max-width: 900px) {
         grid-template-columns: repeat(2, 1fr);
     }
+
     gap: 20px 13px;
     margin-bottom: 20px;
     ;
@@ -106,4 +112,13 @@
             transform: rotate(0deg);
         }
     }
+}
+
+
+.LocationFilterCont {
+    z-index: $mainPageLocationFilterZIndex;
+    position: absolute;
+    
+    top: 35px;
+
 }

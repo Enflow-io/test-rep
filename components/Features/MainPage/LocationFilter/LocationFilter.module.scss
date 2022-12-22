@@ -1,0 +1,163 @@
+.LocationFilter {
+    padding: 10px 0px;
+
+    width: 420px;
+    min-height: 315px;
+
+    background: #FFFFFF;
+    border: 0.5px solid #E2E5EB;
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.07);
+    border-radius: 16px;
+
+}
+
+.Divider {
+    height: 1px;
+    border-bottom: 0.5px solid #B5BCCB;
+    margin: 0 20px;
+    width: calc(100% - 40px);
+}
+
+.DividerFull {
+    @extend .Divider;
+    margin: 0;
+    width: 100%;
+}
+
+.TagsList {
+    padding: 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 13px;
+}
+
+.Tag {
+
+    padding: 10px;
+    height: 40px;
+    background: #F8F8F8;
+    border-radius: 10px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #343B47;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+
+    >svg {
+        cursor: pointer;
+        margin-left: 8px;
+    }
+}
+
+
+.Footer {
+    padding: 0 20px;
+    ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+
+    a {
+
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height */
+        color: #3B85F7;
+        position: relative;
+        top: 5px;
+    }
+}
+
+
+.SearchInput {
+    padding: 0 20px;
+    ;
+    display: flex;
+    align-items: center;
+    height: 50px;
+
+    >svg {
+        margin-right: 10px;
+    }
+
+    input {
+        flex-grow: 1;
+        border: none;
+        outline: none;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        /* identical to box height */
+
+        display: flex;
+        align-items: center;
+
+        color: #7B869B;
+
+        &::placeholder {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            /* identical to box height */
+
+            display: flex;
+            align-items: center;
+
+            color: #7B869B;
+        }
+    }
+}
+
+.Slider {
+    padding: 20px 20px 0px 20px;
+    margin-bottom: 20px;
+    padding-bottom: 25px;
+
+    label {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        display: block;
+        color: #26365C;
+        margin-bottom: 20px;
+    }
+
+}
+
+
+.CityList {
+    list-style: none;
+    padding-left: 0px;
+    height: 200px;
+    overflow: scroll;
+
+    li {
+        padding-left: 50px;
+        display: flex;
+        align-items: center;
+        &:hover{
+            background: #F6F8FB;  
+        }
+        cursor: pointer;
+        height: 40px;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #26365C;
+    }
+}

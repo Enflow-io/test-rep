@@ -21,7 +21,7 @@ const CatalogList = ({ }: CatalogListProps) => {
       <h3>Последние предложения</h3>
       <div className={classes.HeaderMenu}>
         <SelectInput
-          instanceId={'sort-react-select'}
+          instanceId={'sort-react-select1231s'}
           className={classes.Select}
           value={{ value: 'Популярные', label: 'Популярные' }}
           options={[
@@ -32,12 +32,14 @@ const CatalogList = ({ }: CatalogListProps) => {
           ]} />
 
         <SelectInput
-          instanceId={'sort2-react-select'}
+          instanceId={'sort2-react-selectasdfsdf3'}
           value={{ value: 'За все время', label: 'За все время' }}
           options={[
             { value: 'За все время', label: 'За все время' },
             { value: 'За месяц', label: 'За месяц' },
-          ]} />
+          ]} 
+          
+          />
 
         <div className={classes.Divider}></div>
 
