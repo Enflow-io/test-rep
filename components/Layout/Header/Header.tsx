@@ -64,7 +64,7 @@ const Header = (props: HeaderProps) => {
         <div className={classes.Container}>
             <div className={classes.LeftPart}>
                 <Logo width={100} height={36} />
-                <DesktopMenu className={classes.DesktopMenu} />
+                <DesktopMenu activeItem={activeItem} className={classes.DesktopMenu} />
                 <MobileMenu activeItem={activeItem} className={classes.MobileMenu} />
             </div>
 

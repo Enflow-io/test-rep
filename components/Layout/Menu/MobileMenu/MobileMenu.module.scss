@@ -22,6 +22,9 @@
     .ButtonContainer{
         display: flex;
         align-items: center;
+        position: relative;
+        top: 2px;
+        
         a {
             padding-right: 4px;
             padding-left: 8px;

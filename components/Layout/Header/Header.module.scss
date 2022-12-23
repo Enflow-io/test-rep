@@ -99,8 +99,9 @@ $headerHeight: 50px;
     }
 
     &:hover {
+        text-decoration: none;
         >span {
-            text-decoration: underline;
+            // text-decoration: underline;
         }
 
     }
@@ -115,7 +116,7 @@ $headerHeight: 50px;
 
 
 .Active {
-    font-weight: bold;
+    // font-weight: bold;
 }
 
 
@@ -124,6 +125,9 @@ $menuWidth: 972px;
 .DesktopMenu {
     @media (max-width: $menuWidth) {
         display: none !important;
+    }
+    a, a:hover {
+        text-decoration: none;
     }
 
 }

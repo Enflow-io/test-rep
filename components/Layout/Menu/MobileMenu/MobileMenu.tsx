@@ -42,7 +42,6 @@ const MobileMenu = ({ activeItem, className = '' }: MobileMenuProps) => {
     }}>
       <div className={classes.ButtonContainer}>
         <Icon color='#3B85F7' />
-        {/* {createElement(item.icon, {color: ''})} */}
         <a>{activeItem.title}</a>
       </div>
       <div className={classes.Icon}>
