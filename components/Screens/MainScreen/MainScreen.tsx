@@ -12,6 +12,7 @@ const MainScreen = () => {
         <div className={classes.Blackout}>
         </div>
 
+
         <div className={classes.Content} >
             <MainPageTitle />
             <MainFilter />

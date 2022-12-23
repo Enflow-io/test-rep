@@ -1,4 +1,5 @@
 import React from 'react';
+import Car from '../../../../interfaces/car.interface';
 import DromIcon from '../../../Svg/Logos/DromIcon';
 import DromIconBlack from '../../../Svg/Logos/DromIconBlack';
 import HoverGallery from '../../HoverGallery/HoverGallery';
@@ -6,30 +7,28 @@ import classes from './VerticalCatalogCard.module.scss';
 
 export interface VerticalCatalogCardProps {
   title: string
+  data: Car
 }
 
 const VerticalCatalogCard = (props: VerticalCatalogCardProps) => {
 
   return <div className={classes.VerticalCatalogCard}>
-    {/* {props.title === 'Toyota Camry VII (XV50)' &&
-      <div className={classes.Img}>
-        <img src={'/img/car-preview.jpg'} />
-      </div>
-    } */}
 
-    <HoverGallery style={{
-      // width: 300,
-      height: 215,
-    }} />
+    <HoverGallery
+      pics={props.data.pics}
+      style={{
+        height: 215,
+      }}
+    />
 
 
     <div className={classes.VerticalCardContent}>
       <div className={classes.VerticalCardNameContainer}>
-        <a className={classes.VerticalCardName} title={props.title} href='#'>{props.title}</a>
+        <a className={classes.VerticalCardName} title={props.data.title} href='#'>{props.data.title}</a>
       </div>
 
       <div className={classes.Price}>
-        <span>3 600 000 ₽</span>
+        <span>{props.data.price} ₽</span>
       </div>
 
       <div className={classes.Tags}>

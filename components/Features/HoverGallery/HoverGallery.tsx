@@ -1,11 +1,13 @@
 import React, { useRef, useState } from 'react';
 import classes from './HoverGallery.module.scss';
 import { debounce } from "lodash"
+import { Pic } from '../../../interfaces/car.interface';
 export interface HoverGalleryProps {
   style: React.CSSProperties
+  pics: Pic[]
 }
 
-const HoverGallery = ({ style }: HoverGalleryProps) => {
+const HoverGallery = ({ style, pics }: HoverGalleryProps) => {
   const component = useRef(null);
   const [page, setPage] = useState(1)
   const [isPaginatorShown, setIsPaginatorShown] = useState(false);
@@ -32,11 +34,10 @@ const HoverGallery = ({ style }: HoverGalleryProps) => {
 
   }, 5);
 
+  const picsLinks = pics.slice(0, 3).map(el=>el.url);
   const images = [
     '',
-    '/img/car-preview.jpg',
-    '/car-preview/1.jpeg',
-    '/car-preview/2.jpeg'
+    ...picsLinks
   ]
   return <div
     onMouseMove={mouseMove}

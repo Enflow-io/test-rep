@@ -80,6 +80,9 @@
 .Select {
     margin-right: 16px;
     ;
+    @media (max-width: 785px) {
+        display: none;
+    }
 }
 
 

@@ -20,7 +20,7 @@ const Footer = (props: FooterProps) => {
                     </div>
                 </div>
 
-                <div className={classes.Col}>
+                <div className={`${classes.Col} ${classes.SiteMapCont}`}>
                     <label>Карта сайта:</label>
                     <ul className={classes.SiteMap}>
                         <li>
@@ -35,7 +35,7 @@ const Footer = (props: FooterProps) => {
                     </ul>
                 </div>
 
-                <div className={classes.Col}>
+                <div className={`${classes.Col} ${classes.ContactsCont}`}>
                     <label>Контакты:</label>
                     <ul className={classes.Contacts}>
                         <li>

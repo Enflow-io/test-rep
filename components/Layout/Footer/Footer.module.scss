@@ -40,6 +40,19 @@
     }
 }
 
+.SiteMapCont{
+    @media  (max-width: 900px) {
+        display: none;
+    }
+}
+
+
+.ContactsCont{
+    @media  (max-width: 600px) {
+        display: none;
+    }
+}
+
 .UnderLogoText {
     margin-top: 10px;
     font-size: 11px;

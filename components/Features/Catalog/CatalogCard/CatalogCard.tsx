@@ -1,4 +1,5 @@
 import React from 'react';
+import Car from '../../../../interfaces/car.interface';
 import HearBtnIcon from '../../../Svg/HearBtnIcon';
 import DromIconBlack from '../../../Svg/Logos/DromIconBlack';
 import HoverGallery from '../../HoverGallery/HoverGallery';
@@ -7,6 +8,7 @@ import classes from './CatalogCard.module.scss';
 export interface CatalogCardProps {
   showDivider?: boolean
   setIsHovered?: (isHovered: boolean) => void
+  data: Car
 }
 
 const CatalogCard = (props: CatalogCardProps) => {
@@ -25,17 +27,20 @@ const CatalogCard = (props: CatalogCardProps) => {
   >
     <div className={classes.CatalogCardContainer}>
       <div className={classes.ImgContainer}>
-        {/* <img src={'/img/car.png'} /> */}
-        <HoverGallery style={{
-          width: 300,
-          height: 200,
-          borderRadius: 12,
-          overflow: 'hidden'
-        }} />
+
+        <HoverGallery
+          pics={props.data.pics}
+          style={{
+            width: 300,
+            height: 200,
+            borderRadius: 12,
+            overflow: 'hidden'
+          }} />
       </div>
 
       <div className={classes.Info}>
-        <a href=''>Toyota Camry VII (XV50)</a>
+        {/* <a href=''>Toyota Camry VII (XV50)</a> */}
+        <a href=''>{props.data.title}</a>
 
         <div className={classes.Tags}>
           <div>2020 г</div>
@@ -72,7 +77,7 @@ const CatalogCard = (props: CatalogCardProps) => {
       </div>
 
       <div className={classes.Price}>
-        <span>3 600 000 ₽</span>
+        <span>{props.data.price} ₽</span>
       </div>
 
 
