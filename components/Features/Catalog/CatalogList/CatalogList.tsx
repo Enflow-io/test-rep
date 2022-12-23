@@ -47,13 +47,13 @@ const CatalogList = ({ }: CatalogListProps) => {
           e.preventDefault();
           setIsVertical(false)
         }}>
-          <HorizontalBtnIcon />
+          <HorizontalBtnIcon isActive={!isVertical}/>
         </a>
         <a href='#' onClick={(e) => {
           e.preventDefault();
           setIsVertical(true)
         }}>
-          <VerticalBtnIcon />
+          <VerticalBtnIcon isActive={isVertical} />
         </a>
       </div>
     </div>
