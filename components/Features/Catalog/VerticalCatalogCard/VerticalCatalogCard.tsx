@@ -1,6 +1,7 @@
 import React from 'react';
 import DromIcon from '../../../Svg/Logos/DromIcon';
 import DromIconBlack from '../../../Svg/Logos/DromIconBlack';
+import HoverGallery from '../../HoverGallery/HoverGallery';
 import classes from './VerticalCatalogCard.module.scss';
 
 export interface VerticalCatalogCardProps {
@@ -8,10 +9,12 @@ export interface VerticalCatalogCardProps {
 }
 
 const VerticalCatalogCard = (props: VerticalCatalogCardProps) => {
+  
   return <div className={classes.VerticalCatalogCard}>
-    <div className={classes.Img}>
+    {/* <div className={classes.Img}>
       <img src={'/img/car-preview.jpg'} />
-    </div>
+    </div> */}
+    <HoverGallery />
 
     <div className={classes.VerticalCardContent}>
       <div className={classes.VerticalCardNameContainer}>
