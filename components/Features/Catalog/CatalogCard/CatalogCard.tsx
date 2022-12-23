@@ -1,6 +1,7 @@
 import React from 'react';
 import HearBtnIcon from '../../../Svg/HearBtnIcon';
 import DromIconBlack from '../../../Svg/Logos/DromIconBlack';
+import HoverGallery from '../../HoverGallery/HoverGallery';
 import classes from './CatalogCard.module.scss';
 
 export interface CatalogCardProps {
@@ -24,8 +25,15 @@ const CatalogCard = (props: CatalogCardProps) => {
   >
     <div className={classes.CatalogCardContainer}>
       <div className={classes.ImgContainer}>
-        <img src={'/img/car.png'} />
+        {/* <img src={'/img/car.png'} /> */}
+        <HoverGallery style={{
+          width: 300,
+          height: 200,
+          borderRadius: 12,
+          overflow: 'hidden'
+        }} />
       </div>
+
       <div className={classes.Info}>
         <a href=''>Toyota Camry VII (XV50)</a>
 

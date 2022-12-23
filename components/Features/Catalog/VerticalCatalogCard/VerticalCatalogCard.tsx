@@ -9,12 +9,19 @@ export interface VerticalCatalogCardProps {
 }
 
 const VerticalCatalogCard = (props: VerticalCatalogCardProps) => {
-  
+
   return <div className={classes.VerticalCatalogCard}>
-    {/* <div className={classes.Img}>
-      <img src={'/img/car-preview.jpg'} />
-    </div> */}
-    <HoverGallery />
+    {/* {props.title === 'Toyota Camry VII (XV50)' &&
+      <div className={classes.Img}>
+        <img src={'/img/car-preview.jpg'} />
+      </div>
+    } */}
+
+    <HoverGallery style={{
+      // width: 300,
+      height: 215,
+    }} />
+
 
     <div className={classes.VerticalCardContent}>
       <div className={classes.VerticalCardNameContainer}>

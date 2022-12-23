@@ -2,12 +2,13 @@ import React, { useRef, useState } from 'react';
 import classes from './HoverGallery.module.scss';
 import { debounce } from "lodash"
 export interface HoverGalleryProps {
-
+  style: React.CSSProperties
 }
 
-const HoverGallery = ({ }: HoverGalleryProps) => {
+const HoverGallery = ({ style }: HoverGalleryProps) => {
   const component = useRef(null);
   const [page, setPage] = useState(1)
+  const [isPaginatorShown, setIsPaginatorShown] = useState(false);
 
   const mouseMove = debounce((event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 
@@ -27,11 +28,6 @@ const HoverGallery = ({ }: HoverGalleryProps) => {
       }
 
       setPage(pageNumber);
-      // console.log("mouseX", mouseX);
-      // console.log("componentWidth", componentWidth);
-      // console.log("partWidth", partWidth);
-      // console.log("pageNumber", pageNumber);
-
     }
 
   }, 5);
@@ -44,15 +40,26 @@ const HoverGallery = ({ }: HoverGalleryProps) => {
   ]
   return <div
     onMouseMove={mouseMove}
-    className={classes.HoverGallery}>
-    <div ref={component} className={classes.Img}>
+    onMouseEnter={() => {
+      setIsPaginatorShown(true);
+    }}
+    onMouseLeave={() => {
+      setIsPaginatorShown(false);
+    }}
+    className={classes.HoverGallery}
+    style={style}
+  >
+    <div ref={component}
+      className={classes.Img}
+    >
       <img src={images[page]} />
     </div>
-    <div className={classes.Indicator}>
-      <div className={`${classes.IndicatorBar} ${page === 1 ? classes.Active : null}`}></div>
-      <div className={`${classes.IndicatorBar} ${page === 2 ? classes.Active : null}`}></div>
-      <div className={`${classes.IndicatorBar} ${page === 3 ? classes.Active : null}`}></div>
-    </div>
+    {isPaginatorShown &&
+      <div className={classes.Indicator}>
+        <div className={`${classes.IndicatorBar} ${page === 1 ? classes.Active : null}`}></div>
+        <div className={`${classes.IndicatorBar} ${page === 2 ? classes.Active : null}`}></div>
+        <div className={`${classes.IndicatorBar} ${page === 3 ? classes.Active : null}`}></div>
+      </div>}
   </div>;
 };
 export default HoverGallery;

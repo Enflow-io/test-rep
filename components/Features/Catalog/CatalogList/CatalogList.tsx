@@ -53,7 +53,7 @@ const CatalogList = ({ }: CatalogListProps) => {
           e.preventDefault();
           setIsVertical(true)
         }}>
-          <VerticalBtnIcon isActive={isVertical} />
+          <VerticalBtnIcon isActive={isVertical}  />
         </a>
       </div>
     </div>
