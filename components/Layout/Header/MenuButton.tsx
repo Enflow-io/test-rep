@@ -8,6 +8,7 @@ interface MenuButtonProps {
     icon?: any
     link?: string
     onClick?: () => void
+    id?: string
 }
 
 const MenuButton = (props: MenuButtonProps) => {
@@ -16,11 +17,12 @@ const MenuButton = (props: MenuButtonProps) => {
     const isActive = router.pathname === link;
     const iconOnly = !props.title && !!props.icon;
     if (props.onClick) {
-        return <a onClick={(e)=>{
+        return <a onClick={(e) => {
             e.preventDefault();
             props.onClick && props.onClick()
-        }} 
-        className={`${classes.MenuButton} ${iconOnly ? classes.IconButton : null} ${isActive ? classes.Active : null}`}>
+        }}
+            id={props.id}
+            className={`${classes.MenuButton} ${iconOnly ? classes.IconButton : null} ${isActive ? classes.Active : null}`}>
             {props.icon && props.icon}
             {props.title && <span>{props.title}</span>}
         </a>

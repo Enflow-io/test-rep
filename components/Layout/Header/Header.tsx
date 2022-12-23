@@ -16,6 +16,7 @@ import Logo from "../../UI/Logo/Logo"
 import DesktopMenu from "../Menu/DesktopMenu/DesktopMenu"
 import Items from "../Menu/MenuItems"
 import MobileMenu from "../Menu/MobileMenu/MobileMenu"
+import UserMenu from "../UserMenu/UserMenu"
 import classes from "./Header.module.scss"
 import MenuButton from "./MenuButton"
 
@@ -26,6 +27,7 @@ interface HeaderProps {
 const Header = (props: HeaderProps) => {
     const router = useRouter();
     const [hasNotifications, setHasNotifications] = useState(false);
+    const [isUserMenuOpened, setIsUserMenuOpened] = useState(false);
 
     const authState = useSelector(selectAuthState);
     const dispatch = useDispatch();
@@ -38,7 +40,7 @@ const Header = (props: HeaderProps) => {
             setHasNotifications(false);
         }, 1500);
 
-setTimeout(() => {
+        setTimeout(() => {
             setHasNotifications(true);
         }, 2000);
 
@@ -72,16 +74,29 @@ setTimeout(() => {
                 <div className={classes.UserMenu}>
                     {!authState &&
                         <MenuButton
-                            onClick={()=>dispatch(setAuthState(true))}
+                            onClick={() => dispatch(setAuthState(true))}
                             title="Войти"
                             icon={<EnterIcon />}
                         />
                     }
                     {authState &&
-                        <MenuButton
-                            title="+7 (923) 154-89-68"
-                            icon={<ProfileIcon />}
-                        />
+                        <div>
+                            <MenuButton
+                                id={"user-menu-button"}
+                                onClick={() => {
+                                    setIsUserMenuOpened(!isUserMenuOpened);
+                                    
+                                }}
+                                title="+7 (923) 154-89-68"
+                                icon={<ProfileIcon />}
+                            />
+                            {isUserMenuOpened &&
+                                <UserMenu close={() => {
+                                    setIsUserMenuOpened(false)
+                                }} />
+                            }
+                        </div>
+
                     }
                     <div className={classes.Divider}></div>
                     <ul>

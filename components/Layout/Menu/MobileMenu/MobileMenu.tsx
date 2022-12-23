@@ -19,16 +19,30 @@ const MobileMenu = ({ activeItem, className = '' }: MobileMenuProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  useOnClickOutside(ref, () => setIsExpanded(false));
+  useOnClickOutside(ref, (event: any) => {
+    console.log(event.path)
+    const isTargetButton = event.path.some((el: HTMLElement) => {
+      if (el.getAttribute) {
+        const id = el.getAttribute("id");
+        return id === "mobile-menu";
+      } else {
+        return false;
+      }
+    })
+    if (!isTargetButton) {
+      setIsExpanded(false)
+    }
+
+  });
 
 
   const Icon = activeItem.icon;
-  return <div className={`${classes.MobileMenu} ${className}`}>
+  return <div id='mobile-menu' className={`${classes.MobileMenu} ${className}`}>
     <span onClick={() => {
       setIsExpanded(!isExpanded);
     }}>
       <div className={classes.ButtonContainer}>
-        <Icon color='#3B85F7'/>
+        <Icon color='#3B85F7' />
         {/* {createElement(item.icon, {color: ''})} */}
         <a>{activeItem.title}</a>
       </div>
