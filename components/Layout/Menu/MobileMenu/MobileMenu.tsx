@@ -20,7 +20,6 @@ const MobileMenu = ({ activeItem, className = '' }: MobileMenuProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useOnClickOutside(ref, (event: any) => {
-    console.log(event.path)
     const isTargetButton = event.path.some((el: HTMLElement) => {
       if (el.getAttribute) {
         const id = el.getAttribute("id");
