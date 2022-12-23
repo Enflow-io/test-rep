@@ -1,4 +1,5 @@
 import React from 'react'
+import classes from "./svg.module.scss";
 import SvgInterface from '../../interfaces/SvgInterface';
 
 interface FavoriteBtnIconProps extends SvgInterface {

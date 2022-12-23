@@ -9,3 +9,29 @@
 
     
 }
+
+
+.FavoriteBtn{
+
+}
+
+.HeartBtn{
+    .HeartActive{
+        display: block;
+    }
+
+    .HeartNotActive{
+        display: none;
+        
+    }
+    &:hover{
+        .HeartActive{
+            display: none;
+        }
+
+        .HeartNotActive{
+            display: block;
+            
+        }
+    }   
+}
