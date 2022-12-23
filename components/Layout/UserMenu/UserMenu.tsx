@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import React, { useRef } from 'react';
+import { useDispatch } from 'react-redux';
 import useOnClickOutside from '../../../Hooks/userOutsideHook';
+import { setAuthState } from '../../../store/authSlice';
 import classes from './UserMenu.module.scss';
 
 export interface UserMenuProps {
@@ -9,21 +11,21 @@ export interface UserMenuProps {
 
 const UserMenu = ({ close }: UserMenuProps) => {
   const ref = useRef<HTMLDivElement>(null);
-
+  const dispatch = useDispatch();
   useOnClickOutside(ref, (event: any) => {
-    const isTargetButton = event.path.some((el: HTMLElement)=> {
-      if(el.getAttribute){
+    const isTargetButton = event.path.some((el: HTMLElement) => {
+      if (el.getAttribute) {
         const id = el.getAttribute("id");
         return id === "user-menu-button";
-      }else{
+      } else {
         return false;
       }
-    }) 
-    if(!isTargetButton){
+    })
+    if (!isTargetButton) {
       close()
     }
-    
-  } );
+
+  });
 
   return <div ref={ref} className={classes.UserMenu}>
     <ul>
@@ -37,7 +39,10 @@ const UserMenu = ({ close }: UserMenuProps) => {
         <Link href="/">Избранное</Link>
       </li>
       <li>
-        <Link href="/">Выйти</Link>
+        <Link onClick={(e) => {
+          e.preventDefault();
+          dispatch(setAuthState(false))
+        }} href="/">Выйти</Link>
       </li>
     </ul>
   </div>;
